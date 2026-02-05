@@ -2,7 +2,7 @@ openapi: 3.0.3
 
 info:
   title: Somi backend API
-  version: 0.4.0
+  version: 0.4.1
 
 tags:
   - name: Calendar
@@ -37,12 +37,12 @@ paths:
         - Calendar
       summary: Retrieve 3 weeks of the user's calendar events
       parameters:
-        - name: f
+        - name: - (no name, simple query string)
           in: query
           description: from - Retrieves 3 weeks of events starting from the provided week. Even though the specific day and and time are provided as per the format, they are ignored as a week is assumed to start on monday. If this is not provided, `from` defaults to a week prior
           schema:
             type: string
-            format: date-time
+            format: date-time in yyyy-dd-mm format
             nullable: true
       responses:
         '200':
@@ -90,12 +90,12 @@ paths:
         - Calendar
       summary: Retrieve 3 weeks of the community's calendar events
       parameters:
-        - name: f
+        - name: - (no name, simple query string)
           in: query
           description: from - Retrieves 3 weeks of events starting from the provided week. Even though the specific day and and time are provided as per the format, they are ignored as a week is assumed to start on monday. If this is not provided, `from` defaults to a week prior
           schema:
             type: string
-            format: date-time
+            format: date-time in yyyy-dd-mm format
             nullable: true
         - name: community
           required: true
